@@ -1,0 +1,25 @@
+.player1{
+	width: 100px;
+	height: 150px;
+	border: 3px solid navy;
+	font-size: 100px;
+
+
+}
+.computer{
+	width: 100px;
+	height: 150px;
+	border: 3px solid navy;
+}
+
+body{
+	background-image: url("http://www.fun-free-party-games.com/ffpg-allimages/Blackjack-Table-Smalltext-A4.gif");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	max-height: 1000px;
+}
+h1{
+	text-align: center;
+
+
+}
