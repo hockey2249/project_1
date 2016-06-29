@@ -2,57 +2,93 @@
 <html>
 <head>
 	<title>Jeopardy</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=2">
 </head>
 <body>
-	<h1>Jeopardy</h1>
-<table>
-	<tr id="100">
-		<td class ="box">OOP</td>
-		<td class ="box">Functions</td>
+	<h1>Jeopardy</h1>	
+<div class="col-lg-6">
+<table align="center">
+	<tr>
+		<td class ="box">OOP in JS</td>
+		<td class ="box">DOM Manipulation</td>
 		<td class ="box">jQuery</td>
 		<td class ="box">Bootstrap</td>
 		<td class ="box">AJAX</td>
 	</tr>
-	<tr id="100">
+	<tr id="hundred">
 		<td class ="box" id ="box1">$100</td>
 		<td class ="box" id ="box2">$100</td>
 		<td class ="box" id ="box3">$100</td>
 		<td class ="box" id ="box4">$100</td>
 		<td class ="box" id ="box5">$100</td>
 	</tr>
-	<tr id="200">
+	<tr id="twohundred">
 		<td class ="box" id ="box7">$200</td>
 		<td class ="box" id ="box8">$200</td>
 		<td class ="box" id ="box9">$200</td>
 		<td class ="box" id ="box10">$200</td>
 		<td class ="box" id ="box11">$200</td>
 	</tr>
-	<tr id="300">
+	<tr id="threehundred">
 		<td class ="box" id ="box12">$300</td>
 		<td class ="box" id ="box13">$300</td>
 		<td class ="box" id ="box14">$300</td>
 		<td class ="box" id ="box15">$300</td>
 		<td class ="box" id ="box16">$300</td>
 	</tr>
-	<tr id="400">
+	<tr id="fourhundred">
 		<td class ="box" id ="box17">$400</td>
 		<td class ="box" id ="box18">$400</td>
 		<td class ="box" id ="box19">$400</td>
 		<td class ="box" id ="box20">$400</td>
 		<td class ="box" id ="box21">$400</td>
 	</tr>
-	<tr id="500">
-		<td class ="box" id ="box17">$500</td>
-		<td class ="box" id ="box18">$500</td>
-		<td class ="box" id ="box19">$500</td>
-		<td class ="box" id ="box20">$500</td>
-		<td class ="box" id ="box21">$500</td>
+	<tr id="fivehundred">
+		<td class ="box" id ="box22">$500</td>
+		<td class ="box" id ="box23">$500</td>
+		<td class ="box" id ="box24">$500</td>
+		<td class ="box" id ="box25">$500</td>
+		<td class ="box" id ="box26">$500</td>
 	</tr>
 </table>
+</div class="col-lg-6">
 
+<img src="https://i.ytimg.com/vi/kGnikoLRDLo/maxresdefault.jpg" alt="Mountain View" style=" width:604px;height:228px;">
+	
+<div>
+<h1>Player 1 Score</h1>
+<div id="score"></div>
+
+<br>
+
+<h1>Player 2 Score</h1>
+<div id="score1"></div>
+
+<br>
+<h1>Player 3 Score</h1>
+<div id="score2"></div>
+</div>
+
+<!-- <div class="big_box">
+	<div class="col-md-4" id="player1">
+		<h1>Player 1 Score</h1>
+		<h3></h3>
+	</div>
+	<div class="col-md-4" id="player2">
+		<h1>Player 2 Score</h1>
+	</div>
+	<div class="col-md-4" id="player3">
+		<h1>Player 3 Score</h1>
+	</div>
+</div> -->
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
+<footer class="footer">
+	
+</footer>
 
 </html>
