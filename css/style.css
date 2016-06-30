@@ -1,15 +1,22 @@
+.blink_me{
+	color: yellow;
+	font-size: 72px;
+}
 body{
 	 background: url("http://4.bp.blogspot.com/-wkdD2v_8S6A/UV7k1pRFRhI/AAAAAAAAAYY/uGZLMlyps0Q/s1600/TREBEK.jpg");
 	 background-size: cover;
 	 background-repeat: no-repeat;
 }
 img{
-	max-width: 225px;
+	max-width: 200px;
 	margin: auto;
 }
+
 h1{
+	font-size: 24px;
 	text-align: center;
 	color: white;
+	font-style: bold;
 }
 h2{
 	float: left;
@@ -18,45 +25,78 @@ h2{
 }
 table{
 	padding-right: 120px;
-	padding-top: 50px;
 }
-.box{
+.major_box{
 	background-color: blue;
-	height: 100px;
-	width: 175px;
+	height: 95px;
+	width: 150px;
 	border-style: solid;
 	border-color: white;
     border-width: 2px;
     color: white;
     text-align: center;
     font-size: 28px;
+    opacity: .95;
+    filter: alpha(opacity=50);
+}
+.box{
+	background-color: blue;
+	height: 90px;
+	width: 150px;
+	border-style: solid;
+	border-color: white;
+    border-width: 2px;
+    color: yellow;
+    text-align: center;
+    font-size: 28px;
+    transition: font-size 1s ease-in-out;
+    opacity: .75;
+    filter: alpha(opacity=50);
+}
+.score_box{
+	background-color: blue;
+	height: 80px;
+	border-style: solid;
+	border-color: white;
+    border-width: 2px;
+    color: yellow;
+    text-align: center;
+    font-size: 28px;
+    transition: font-size 1s ease-in-out;
+    padding-top: 15px;
+    opacity: .75;
+    filter: alpha(opacity=50);
+}
+.box:hover{
+	background-color: red;
+	font-size: 40px;
 }
 .col-lg-6{
 	float: right;
 }
-.big_box{
-	padding: 20px;
-}
 .footer{
 	padding: 100px;
 }
+
 #score{
 	text-align: center;
 	font-size: 32px;
 	color: white;
 }
+
 #score1{
 	text-align: center;
 	font-size: 32px;
 	color: white;
 }
+
 #score2{
 	text-align: center;
 	font-size: 32px;
 	color: white;
 }
+
 #Jeopardy{
 	margin: center;
 }
-
 

@@ -2,770 +2,123 @@ var score = 0;
 var score1 = 0;
 var score2 = 0;
 var click = 0;
-var box1 = document.getElementById('box1');
+
+(function blink() { 
+  $('.blink_me').fadeOut(6000).fadeIn(2200, blink); 
+})();
 
 function Question(question, answer) {
     this.question = question;
     this.answer = answer;
 }
 
-function scorehundred(){
+function getandcheckanswer(questionObject, boxId, addedPoints){
+	return function(evt){
+	if (prompt(questionObject.question).toUpperCase() === questionObject.answer) {
+	    	alert("Correct!");
+			evt.target.style.color = 'blue';
+			document.getElementById(boxId).style.pointerEvents = 'none';
+			if(click%3 === 0) {
+				score += addedPoints;
+				$('#score').text(score);
+				click++;
+			}else if (click%3 === 1) {
+				score1 += addedPoints;
+				$('#score1').text(score1);
+				click++;
+			}else {
+				score2 += addedPoints;
+				$('#score2').text(score2);
+				click++;
+			}
+	}else{
+	    		alert("That is not the correct answer!");
+	    		evt.target.style.color = 'blue';
+	    		document.getElementById(boxId).style.pointerEvents = 'none';
+	    		click++;
+	      }
+	    		console.log(click);
+	    		winner();
+	};
+}
 
 var question1 = new Question("What is Kyle's name?", "KYLE");
 var question2 = new Question("Who is the smartest person in the room?", "JOE");
 var question3 = new Question("What is Kyle's name?", "KYLE");
 var question4 = new Question("Who is the smartest person in the room?", "JOE");
 var question5 = new Question("Who is the smartest person in the room?", "JOE");
+var question6 = new Question("What is Kyle's name?", "KYLE");
+var question7 = new Question("Who is the smartest person in the room?", "JOE");
+var question8 = new Question("What is Kyle's name?", "KYLE");
+var question9 = new Question("Who is the smartest person in the room?", "JOE");
+var question10 = new Question("Who is the smartest person in the room?", "JOE");
+var question11 = new Question("What is Kyle's name?", "KYLE");
+var question12 = new Question("Who is the smartest person in the room?", "JOE");
+var question13 = new Question("What is Kyle's name?", "KYLE");
+var question14 = new Question("Who is the smartest person in the room?", "JOE");
+var question15 = new Question("Who is the smartest person in the room?", "JOE");
+var question16 = new Question("What is Kyle's name?", "KYLE");
+var question17 = new Question("Who is the smartest person in the room?", "JOE");
+var question18 = new Question("What is Kyle's name?", "KYLE");
+var question19 = new Question("Who is the smartest person in the room?", "JOE");
+var question20 = new Question("Who is the smartest person in the room?", "JOE");
+var question21 = new Question("What is Kyle's name?", "KYLE");
+var question22 = new Question("Who is the smartest person in the room?", "JOE");
+var question23 = new Question("What is Kyle's name?", "KYLE");
+var question24 = new Question("Who is the smartest person in the room?", "JOE");
+var question25 = new Question("Who is the smartest person in the room?", "JOE");
 
-$("#box1").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box1').style.pointerEvents = 'none';
-			if (click%3 === 0) {
-				score += 100;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 === 1) {
-				score1 += 100;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 100;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box1').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box2").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box2').style.pointerEvents = 'none';
-			if (click%3 === 0) {
-				score += 100;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 === 1) {
-				score1 += 100;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 100;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box2').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box3").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box3').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 100;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 100;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 100;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box3').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box4").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box4').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 100;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 100;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 100;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box4').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    });	
-$("#box5").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box5').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 100;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 100;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 100;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box5').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		 console.log(click);
-	    		 winner();
-	    });	
-}
-scorehundred();
+document.querySelector('#box1').addEventListener("click", getandcheckanswer(question1, 'box1', 100));
+document.querySelector('#box2').addEventListener("click", getandcheckanswer(question2, 'box2', 100));
+document.querySelector('#box3').addEventListener("click", getandcheckanswer(question3, 'box3', 100));
+document.querySelector('#box4').addEventListener("click", getandcheckanswer(question4, 'box4', 100));
+document.querySelector('#box5').addEventListener("click", getandcheckanswer(question5, 'box5', 100));
 
-function twohundred(){
+document.querySelector('#box6').addEventListener("click", getandcheckanswer(question6, 'box6', 200));
+document.querySelector('#box7').addEventListener("click", getandcheckanswer(question7, 'box7', 200));
+document.querySelector('#box8').addEventListener("click", getandcheckanswer(question8, 'box8', 200));
+document.querySelector('#box9').addEventListener("click", getandcheckanswer(question9, 'box9', 200));
+document.querySelector('#box10').addEventListener("click", getandcheckanswer(question10, 'box10', 200));
 
-var question1 = new Question("What is Kyle's name?", "KYLE");
-var question2 = new Question("Who is the smartest person in the room?", "JOE");
-var question3 = new Question("What is Kyle's name?", "KYLE");
-var question4 = new Question("Who is the smartest person in the room?", "JOE");
-var question5 = new Question("Who is the smartest person in the room?", "JOE");
+document.querySelector('#box11').addEventListener("click", getandcheckanswer(question1, 'box11', 300));
+document.querySelector('#box12').addEventListener("click", getandcheckanswer(question1, 'box12', 300));
+document.querySelector('#box13').addEventListener("click", getandcheckanswer(question1, 'box13', 300));
+document.querySelector('#box14').addEventListener("click", getandcheckanswer(question1, 'box14', 300));
+document.querySelector('#box15').addEventListener("click", getandcheckanswer(question1, 'box15', 300));
 
-$("#box7").click(function() {
-	if (prompt(question1.question).toUpperCase() === question1.answer){
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box7').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 200;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 200;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 200;
-				$('#score2').text(score2);
-				click++;
-			}
-	 } else {
-	    alert("That is not the correct answer!");
-	    this.style.color = 'blue';
-	    document.getElementById('box7').style.pointerEvents = 'none';
-	    click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    }
-	    );
+document.querySelector('#box16').addEventListener("click", getandcheckanswer(question1, 'box16', 400));
+document.querySelector('#box17').addEventListener("click", getandcheckanswer(question1, 'box17', 400));
+document.querySelector('#box18').addEventListener("click", getandcheckanswer(question1, 'box18', 400));
+document.querySelector('#box19').addEventListener("click", getandcheckanswer(question1, 'box19', 400));
+document.querySelector('#box20').addEventListener("click", getandcheckanswer(question1, 'box20', 400));
 
-$("#box8").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box8').style.pointerEvents = 'none';
-			if (click%3 === 0) {
-				score += 200;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 === 1) {
-				score1 += 200;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 200;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box8').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box9").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box9').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 200;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 200;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 200;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box9').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box10").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box10').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 200;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 200;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 200;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box10').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    });	
-$("#box11").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box11').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 200;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 200;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 200;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box11').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		 console.log(click);
-	    		 winner();
-	    });	
-console.log(click);
-}
-twohundred();
-
-function threehundred(){
-
-var question1 = new Question("What is Kyle's name?", "KYLE");
-var question2 = new Question("Who is the smartest person in the room?", "JOE");
-var question3 = new Question("What is Kyle's name?", "KYLE");
-var question4 = new Question("Who is the smartest person in the room?", "JOE");
-var question5 = new Question("Who is the smartest person in the room?", "JOE");
-
-$("#box12").click(function() {
-	if (prompt(question1.question).toUpperCase() === question1.answer){
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box12').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 300;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 300;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 300;
-				$('#score2').text(score2);
-				click++;
-			}
-	 } else {
-	    alert("That is not the correct answer!");
-	    this.style.color = 'blue';
-	    document.getElementById('box12').style.pointerEvents = 'none';
-	    click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    }
-	    );
-
-$("#box13").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box13').style.pointerEvents = 'none';
-			if (click%3 === 0) {
-				score += 300;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 === 1) {
-				score1 += 300;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 300;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box8').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box14").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box14').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 300;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 300;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 300;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box14').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box15").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box15').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 300;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 300;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 300;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box15').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    });	
-$("#box16").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box16').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 300;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 300;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 300;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box16').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		 console.log(click);
-	    		 winner();
-	    });	
-console.log(click);
-}
-threehundred();
-
-
-function fourhundred(){
-
-var question1 = new Question("What is Kyle's name?", "KYLE");
-var question2 = new Question("Who is the smartest person in the room?", "JOE");
-var question3 = new Question("What is Kyle's name?", "KYLE");
-var question4 = new Question("Who is the smartest person in the room?", "JOE");
-var question5 = new Question("Who is the smartest person in the room?", "JOE");
-
-$("#box17").click(function() {
-	if (prompt(question1.question).toUpperCase() === question1.answer){
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box17').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 400;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 400;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 400;
-				$('#score2').text(score2);
-				click++;
-			}
-	 } else {
-	    alert("That is not the correct answer!");
-	    this.style.color = 'blue';
-	    document.getElementById('box17').style.pointerEvents = 'none';
-	    click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    }
-	    );
-
-$("#box18").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box18').style.pointerEvents = 'none';
-			if (click%3 === 0) {
-				score += 400;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 === 1) {
-				score1 += 400;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 400;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box18').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box19").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box19').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 400;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 400;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 400;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box19').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box20").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box20').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 400;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 400;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 400;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box20').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    });	
-$("#box21").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box21').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 400;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 400;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 400;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box21').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		 console.log(click);
-	    		 winner();
-	    });	
-console.log(click);
-}
-fourhundred();
-
-function fivehundred(){
-
-var question1 = new Question("What is Kyle's name?", "KYLE");
-var question2 = new Question("Who is the smartest person in the room?", "JOE");
-var question3 = new Question("What is Kyle's name?", "KYLE");
-var question4 = new Question("Who is the smartest person in the room?", "JOE");
-var question5 = new Question("Who is the smartest person in the room?", "JOE");
-
-$("#box22").click(function() {
-	if (prompt(question1.question).toUpperCase() === question1.answer){
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box22').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 500;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 500;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 500;
-				$('#score2').text(score2);
-				click++;
-			}
-	 } else {
-	    alert("That is not the correct answer!");
-	    this.style.color = 'blue';
-	    document.getElementById('box22').style.pointerEvents = 'none';
-	    click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    }
-	    );
-
-$("#box23").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box23').style.pointerEvents = 'none';
-			if (click%3 === 0) {
-				score += 500;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 === 1) {
-				score1 += 500;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 500;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box23').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box24").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box24').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 500;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 500;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 500;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box24').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		console.log(click);
-	    		winner();
-	    });	
-$("#box25").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box25').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 500;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 500;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 500;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box25').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    	console.log(click);
-	    	winner();
-	    });	
-$("#box26").click(function() {
-	if (prompt(question2.question).toUpperCase() === question2.answer) {
-	    	alert("Correct!");
-			this.style.color = 'blue';
-			document.getElementById('box26').style.pointerEvents = 'none';
-			if (click%3 == 0) {
-				score += 500;
-				$('#score').text(score);
-				click++;
-			} else if (click%3 == 1) {
-				score1 += 500;
-				$('#score1').text(score1);
-				click++;
-			} else {
-				score2 += 500;
-				$('#score2').text(score2);
-				click++;
-			}
-	    	} else {
-	    		alert("That is not the correct answer!");
-	    		this.style.color = 'blue';
-	    		document.getElementById('box26').style.pointerEvents = 'none';
-	    		click++;
-	    	}
-	    		 console.log(click);
-	    		 winner();
-	    });	
-console.log(click);
-}
-fivehundred();
+document.querySelector('#box21').addEventListener("click", getandcheckanswer(question1, 'box21', 500));
+document.querySelector('#box22').addEventListener("click", getandcheckanswer(question1, 'box22', 500));
+document.querySelector('#box23').addEventListener("click", getandcheckanswer(question1, 'box23', 500));
+document.querySelector('#box24').addEventListener("click", getandcheckanswer(question1, 'box24', 500));
+document.querySelector('#box25').addEventListener("click", getandcheckanswer(question1, 'box25', 500));
 
 function winner() {
 	if (click === 25){
 		if(score > score1 && score > score2){
-			alert("Hilary Wins with a final score of " + score);
-		}
-	}else if (click === 1){
-
-	} else if( score1 > score){
-		// trump();
-		// console.log("Trump Wins");
-	}  else{
-		// alert("Kyle Gibbons you won with " + score2);
-
+			alert("Hilary wins with a final score of " + score + "!");
+		}else if(score1 > score && score1 > score2){
+			alert("Donald wins with a final score of " + score1 + "!");
+	}else if(score2 > score && score2 > score1){
+		alert("Kyle wns with a final score of " + score2 + "!");
+	}else{
+		console.log("Tie");
 	}
 }
+}
 winner();
+
+// document.getElementById("playAgain").addEventListener("click", clearBoard);
+// function clearBoard(){
+//         getandcheckanswer.theBoxes = document.getElementsByClassName("box");
+//         for(var i = 0; i < getandcheckanswer.theBoxes.length; i++)  {
+//            getandcheckanswer.theBoxes[i].textContent ="";
+//            getandcheckanswer.theBoxes[i].style.backgroundColor = "blue";
+// }
+// }
 	
