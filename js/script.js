@@ -1,6 +1,6 @@
 window.onload = init;
 
-var audio = new Audio('Jeopardy-theme-song.mp3');
+var audio = new Audio('intro.m4a');
 audio.play();
 
 function init(){
@@ -12,10 +12,40 @@ function init(){
     	document.location.reload(true);
     }
 }
+
+var audio = new Audio("double_jeopardy.m4a");
+var hillary = document.getElementById("hillary").addEventListener("click", introducePLayers);
+var donald = document.getElementById("donald").addEventListener("click", introducePLayers);
+var kyle = document.getElementById("kyle").addEventListener("click", introducePLayers);
+
+function dailydouble(){
+	audio.play();
+
+}
+
+function introducePLayers(){
+	if (click1%3 === 0){
+		var audio = new Audio("hillary2.m4a");
+		audio.play();
+		click1++;
+		console.log(click1);
+	}else if(click1%3 === 1){
+		var audio = new Audio("donald1.m4a");
+		audio.play();
+		console.log(click1);
+		click1++;
+	} else{
+		var audio = new Audio("kyle.m4a");
+		audio.play();
+		console.log(kyle);
+	}
+}
+
 var score = 0;
 var score1 = 0;
 var score2 = 0;
 var click = 0;
+var click1 = 0;
 
 function Question(question, answer) {
     this.question = question;

@@ -19,7 +19,7 @@ h1{
 	text-align: center;
 	color: white;
 	font-style: bold;
-	animation-duration: 5s;
+	animation-duration: 10s;
   	animation-name: slidein;
 }
 @keyframes slidein {
