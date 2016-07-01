@@ -1,6 +1,6 @@
 .blink_me{
 	color: yellow;
-	font-size: 64px;
+	font-size: 72px;
 }
 body{
 	 background: url("http://4.bp.blogspot.com/-wkdD2v_8S6A/UV7k1pRFRhI/AAAAAAAAAYY/uGZLMlyps0Q/s1600/TREBEK.jpg");
@@ -10,8 +10,6 @@ body{
 img{
 	max-width: 200px;
 	margin: auto;
-	animation-duration: 5s;
-  	animation-name: slidein;
 }
 
 h1{
@@ -19,19 +17,6 @@ h1{
 	text-align: center;
 	color: white;
 	font-style: bold;
-	animation-duration: 5s;
-  	animation-name: slidein;
-}
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 400%; 
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
 }
 h2{
 	float: left;
@@ -56,8 +41,8 @@ table{
 }
 .box{
 	background-color: blue;
-	height: 94px;
-	width: 130px;
+	height: 90px;
+	width: 150px;
 	border-style: solid;
 	border-color: white;
     border-width: 2px;
@@ -89,8 +74,8 @@ table{
 .col-lg-6{
 	float: right;
 }
-footer{
-	height: 100px;
+.footer{
+	padding: 100px;
 }
 
 #score{
@@ -114,21 +99,4 @@ footer{
 #Jeopardy{
 	margin: center;
 }
-#playAgain{
-	width: 100%;
-	background-color: #004A7F;
-   -webkit-border-radius: 10px;
-    border-radius: 10px;
-	border: solid 2px;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-family: Arial;
-	font-size: 20px;
-	text-align: center;
-	text-decoration: none;
-}
-#playAgain:hover{
-	background-color: red;
-	font-size: 28px;
-}
+
