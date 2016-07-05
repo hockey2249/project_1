@@ -1,28 +1,11 @@
 window.onload = init;
 
-var audio = new Audio('intro.m4a');
-audio.play();
+// Audio file for game begining music 
+// Starts when the page is loaded 
+// var audio = new Audio('intro.m4a');
+// audio.play();
 
-function init(){
-	document.getElementById("playAgain").addEventListener("click", activate);
-    function activate(){
-    	$(".box").removeAttr('style');
-    	$('score').val('');
-    	click = 0;
-    	document.location.reload(true);
-    }
-}
-
-var audio = new Audio("double_jeopardy.m4a");
-var hillary = document.getElementById("hillary").addEventListener("click", introducePLayers);
-var donald = document.getElementById("donald").addEventListener("click", introducePLayers);
-var kyle = document.getElementById("kyle").addEventListener("click", introducePLayers);
-
-function dailydouble(){
-	audio.play();
-
-}
-
+// introduce each of the media files when they're clicked on 
 function introducePLayers(){
 	if (click1%3 === 0){
 		var audio = new Audio("hillary2.m4a");
@@ -41,6 +24,18 @@ function introducePLayers(){
 	}
 }
 
+// Audio files for each of the contestants intros.... Also added the double jeopardy audio 
+var audio = new Audio("double_jeopardy.m4a");
+var hillary = document.getElementById("hillary").addEventListener("click", introducePLayers);
+var donald = document.getElementById("donald").addEventListener("click", introducePLayers);
+var kyle = document.getElementById("kyle").addEventListener("click", introducePLayers);
+
+// funtion for Daily Double... 
+function dailydouble(){
+	audio.play();
+}
+
+
 var score = 0;
 var score1 = 0;
 var score2 = 0;
@@ -56,6 +51,7 @@ function getandcheckanswer(questionObject, boxId, addedPoints){
 	return function(evt){
 	if (prompt(questionObject.question).toUpperCase() === questionObject.answer) {
 	    	var audio = new Audio('correct.m4a');
+	    	alert("That is correct!");
 			audio.play();
 			evt.target.style.color = 'blue';
 			document.getElementById(boxId).style.pointerEvents = 'none';
@@ -77,6 +73,7 @@ function getandcheckanswer(questionObject, boxId, addedPoints){
 	    		document.getElementById(boxId).style.pointerEvents = 'none';
 	    		click++;
 	    		var audio = new Audio("billy.m4a");
+	    		alert("That is NOT correct!");
 				audio.play();
 	      }
 	    		console.log(click);
@@ -159,6 +156,18 @@ function winner() {
 }
 
 winner();
+
+
+//Play again function, resets the scores and starts the program again 
+function init(){
+	document.getElementById("playAgain").addEventListener("click", activate);
+    function activate(){
+    	$(".box").removeAttr('style');
+    	$('score').val('');
+    	click = 0;
+    	document.location.reload(true);
+    }
+}
 
 
 

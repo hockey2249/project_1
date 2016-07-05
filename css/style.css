@@ -6,6 +6,29 @@ body{
 	 background: url("http://4.bp.blogspot.com/-wkdD2v_8S6A/UV7k1pRFRhI/AAAAAAAAAYY/uGZLMlyps0Q/s1600/TREBEK.jpg");
 	 background-size: cover;
 	 background-repeat: no-repeat;
+	 width: 100%;
+     height: auto;
+}
+@media screen and (max-width: 1200px) {
+    body { 
+    background-size:contain;
+    background-color: blue; 
+    }
+}
+@media screen and (max-width: 1100px) {
+.box{
+	background-color: blue;
+	height: 50px;
+	width: 70px;
+	border-style: solid;
+	border-color: white;
+    border-width: 2px;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    opacity: .75;
+    filter: alpha(opacity=50);
+}	
 }
 img{
 	max-width: 200px;
